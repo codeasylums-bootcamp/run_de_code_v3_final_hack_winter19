@@ -1,117 +1,46 @@
 var un=sessionStorage.getItem('un');
     var arr=new Array;
 
+
+
     
 function fun(){
-    for (let i=0;i<18;i++)
-    {
-        arr[i]=0;
-    }
-    arr[3]++;
-    axios.post('http://localhost:3001/api',{
-        username: un,
-        api1_1 : arr[0],
-        api1_2 : arr[1],
-        api1_3 : arr[2],
-        api2_1 : arr[3],
-        api2_2 : arr[4],
-        api2_3 : arr[5],
-        api3_1 : arr[6],
-        api3_2 : arr[7],
-        api3_3 : arr[8],
-        api4_1 : arr[9],
-        api4_2 : arr[10],
-        api4_3 : arr[11],
-        api5_1 : arr[12],
-        api5_2 : arr[13],
-        api5_3 : arr[14],
-        api6_1 : arr[15],
-        api6_2 : arr[16],
-        api6_3 : arr[17],
-        
-    })
+    axios.get(`http://localhost:3001/api_3/${un}`)
     .then((response)=>{
-
-        console.log("stop");
+        console.log("stop")
+        
+        
+        
+        console.log(response)
+       
     })
-    .catch((error)=>{
 
-        console.log(error);
+    .catch((err) => {
+       console.log(err)
     })
 }
 
-function fun1(){
-    for (let i=0;i<18;i++)
-    {
-        arr[i]=0;
-    }
-    arr[4]++;
-    axios.post('http://localhost:3001/api',{
-        username: un,
-        api1_1 : arr[0],
-        api1_2 : arr[1],
-        api1_3 : arr[2],
-        api2_1 : arr[3],
-        api2_2 : arr[4],
-        api2_3 : arr[5],
-        api3_1 : arr[6],
-        api3_2 : arr[7],
-        api3_3 : arr[8],
-        api4_1 : arr[9],
-        api4_2 : arr[10],
-        api4_3 : arr[11],
-        api5_1 : arr[12],
-        api5_2 : arr[13],
-        api5_3 : arr[14],
-        api6_1 : arr[15],
-        api6_2 : arr[16],
-        api6_3 : arr[17],
-        
-    })
-    .then((response)=>{
 
-        console.log("stop");
-    })
-    .catch((error)=>{
-
-        console.log(error);
-    })
+function p(){
+    document.getElementById("c").innerHTML=`<center>
+                
+    <p>
+        <button onclick="ab()" class="btn btn-primary" data-toggle="collapse"  role="button" aria-expanded="false" aria-controls="collapseExample">
+          Link to API
+        </button>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          API_1
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+        http://localhost:3001/api_3/${un}
+        </div>
+      </div>
+</center>`
 }
 
-function fun2(){
-    for (let i=0;i<18;i++)
-    {
-        arr[i]=0;
-    }
-    arr[5]++;
-    axios.post('http://localhost:3001/api',{
-        username: un,
-        api1_1 : arr[0],
-        api1_2 : arr[1],
-        api1_3 : arr[2],
-        api2_1 : arr[3],
-        api2_2 : arr[4],
-        api2_3 : arr[5],
-        api3_1 : arr[6],
-        api3_2 : arr[7],
-        api3_3 : arr[8],
-        api4_1 : arr[9],
-        api4_2 : arr[10],
-        api4_3 : arr[11],
-        api5_1 : arr[12],
-        api5_2 : arr[13],
-        api5_3 : arr[14],
-        api6_1 : arr[15],
-        api6_2 : arr[16],
-        api6_3 : arr[17],
-        
-    })
-    .then((response)=>{
-
-        console.log("stop");
-    })
-    .catch((error)=>{
-
-        console.log(error);
-    })
+function ab(){
+    window.open(`localhost:3001/api_3/${un}`)
 }
+

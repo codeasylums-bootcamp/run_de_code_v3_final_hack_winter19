@@ -26,24 +26,13 @@ function fun(){
 
     axios.post('http://localhost:3001/api',{
         username:document.getElementById('username').value,
-        api1_1: 0,
-        api1_2: 0,
-        api1_3: 0,
-        api2_1: 0,
-        api2_2: 0,
-        api2_3: 0,
-        api3_1: 0,
-        api3_2: 0,
-        api3_3: 0,
-        api4_1: 0,
-        api4_2: 0,
-        api4_3: 0,
-        api5_1: 0,
-        api5_2: 0,
-        api5_3: 0,
-        api6_1: 0,
-        api6_2: 0,
-        api6_3: 0,
+        api1: 0,
+        api2: 0,
+        api3: 0,
+        api4: 0,
+        api5: 0,
+        api6: 0,
+        
         
     })
     .then((response)=>{
